@@ -1,5 +1,5 @@
-=== Magic Fields ===
-Contributors: [hunk](http://hunk.com.mx "Hunk")
+=== Magic Contact ===
+Contributors: hunk
 Tags: contact form, contactable, magic contact, email, contact, form
 Tested up to: Wordpress 2.9.2
 Requires at least: 2.9.2
@@ -23,7 +23,7 @@ Follow the following steps to install this plugin.
 3. Magic Contact configuration
 
 == Frequently Asked Questions ==
-[Magic Contact Home](http://magicfields.org/)
+[Magic Contact Home](http://blog.hunk.com.mx/magic-contact/)
 
 == Changelog ==
 
