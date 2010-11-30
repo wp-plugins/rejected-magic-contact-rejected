@@ -1,4 +1,4 @@
-=== Magic Fields ===
+=== Magic Contact ===
 Contributors: hunk, John Bloch
 Tags: contact form, contactable, magic contact, email, contact, form
 Tested up to: Wordpress 3.0.1
