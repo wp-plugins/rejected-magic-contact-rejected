@@ -23,7 +23,7 @@ Follow the following steps to install this plugin.
 3. Magic Contact configuration
 
 == Frequently Asked Questions ==
-[Magic Contact Home](http://magicfields.org/)
+[Magic Contact Home](http://blog.hunk.com.mx/magic-contact/)
 
 == Changelog ==
 
