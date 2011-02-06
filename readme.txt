@@ -1,31 +1,44 @@
 === Magic Contact ===
 Contributors: hunk, John Bloch
 Tags: contact form, contactable, magic contact, email, contact, form
-Tested up to: Wordpress 3.0.1
+Tested up to: Wordpress 3.0.4
 Requires at least: 2.9.2
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=edgar%40programador%2ecom&lc=GB&item_name=Donation%20Magic%20Contact&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
-Stable tag: 0.2
+Stable tag: 0.3
 Description: Magic Contact is a simple and Elegant contact form for Wordpress, taking as it bases to Contactable (jQuery Plugin) By Philip Beel.
 
 == Description ==
 Magic Contact is a simple and Elegant contact form for Wordpress, taking as it bases to [Contactable](http://theodin.co.uk/blog/ajax/contactable-jquery-plugin.html "Contactable") (jQuery Plugin) By [Philip Beel](http://theodin.co.uk/ "Philip Beel").
 
+<a href="http://blog.hunk.com.mx/magic-contact/">Magic Contact home </a>.
+
 == Installation ==
 Follow the following steps to install this plugin.
 
-1.	Download plugin to the **/wp-content/plugins/** folder.
-2.	Activate the plugin through the 'Plugins' menu in WordPress.
-3.  Put you settings
+1. Download plugin to the **/wp-content/plugins/** folder.
+2. Activate the plugin through the 'Plugins' menu in WordPress.
+3. Put you settings
+4. uses anchor #contact for open the contact form since link
+5. open the contact form with url: domain.local#contact or domain.local/any#contact
 
 == Screenshots ==
 1. Magic Contact hidden
-2. Magic Contact form
-3. Magic Contact configuration
+2. Magic Contact form (right)
+3. Magic Contact form (left)
+4. Magic Contact configuration
 
 == Frequently Asked Questions ==
 [Magic Contact Home](http://blog.hunk.com.mx/magic-contact/)
 
 == Changelog ==
+
+== 0.3 ==
+* Add email headers
+* Html format for email message
+* Add overlay
+* Add Multisend contact format
+* Add referrer page in message
+* Use hash in url for show contact form o use anchor ( #contact )
 
 = 0.2 =
 * Optimize Code by John Bloch

@@ -12,8 +12,15 @@
 //extend the plugin
 (function($){
 
+  if (window.location.hash) {
+    if(window.location.hash == '#contact'){
+      	setTimeout(function(){$("body").prepend('<div class="m-overlay"></div>');$('div#contactable').click();},1000);
+      	
+    }
+  }
+  
 	//define the new for the plugin ans how to call it	
-	$.fn.contactable = function(options) {
+	$.fn.contactable = function(options) { 
 		//set default options  
 		var defaults = {
 			name: 'Name',
@@ -58,6 +65,13 @@
 			$(this).html(div_form);
 			//show / hide function
 			$('div#contactable').toggle(function() {
+			  $('#callback').hide().empty();
+			  $('.holder').show();
+				$('#loading').hide();
+				
+			  if ($('div.m-overlay').length == 0) {
+			    $("body").prepend('<div class="m-overlay"></div>');
+		    }
 				$('#overlay').css({display: 'block'});
 				if(defaults.side == "right"){
 				  $(this).animate({"marginRight": "-=5px"}, "fast"); 
@@ -71,7 +85,7 @@
   				$('#contactForm').animate({"marginLeft": "+=390px"}, "slow");
 		    }
 			}, 
-			function() {
+			function() { $('div.m-overlay').remove();
 			  if(defaults.side == "right"){
 				  $('#contactForm').animate({"marginRight": "-=390px"}, "slow");
 				  $(this).animate({"marginRight": "-=387px"}, "slow").animate({"marginRight": "+=5px"}, "fast"); 
@@ -122,26 +136,27 @@
 					$.post(defaults.fileMail,{subject:defaults.subject, name: name_val, email: email_val, website: website_val, comment:comment_val, action:defaults.action},
 					function(data){
 						$('#loading').css({display:'none'}); 
-						//data = jQuery.trim(data);
+						data = jQuery.trim(data);
 						if( data == 'success') {
 							$('#callback').show().append(defaults.recievedMsg);
 							if(defaults.hideOnSubmit == true) {
 								//hide the tab after successful submition if requested
-								if(defaults.side == "right"){
-								  $('#contactForm').animate({dummy:1}, 2000).animate({"marginRight": "-=450px"}, "slow");
-								  $('div#contactable').animate({dummy:1}, 2000).animate({"marginRight": "-=447px"}, "slow").animate({"marginRight": "+=5px"}, "fast"); 
-								}else{
-								  $('#contactForm').animate({dummy:1}, 2000).animate({"marginLeft": "-=450px"}, "slow");
-								  $('div#contactable').animate({dummy:1}, 2000).animate({"marginLeft": "-=447px"}, "slow").animate({"marginLeft": "+=5px"}, "fast");
-								}
+								setTimeout(function(){$('div#contactable').click();},1200);
+                $('#comment_mc').val('');
 								$('#overlay').css({display: 'none'});	
 							}
 						} else {
 							$('#callback').show().append(defaults.notRecievedMsg);
+							setTimeout(function(){$('div#contactable').click();},1500);
 						}
 					});		
 				}
 			});
 		});
 	};
+	$(document).ready(function(){
+    $('a[href=#contact]').click(function(){
+        $('div#contactable').click();
+    });
+  });
 })(jQuery);
