@@ -3,11 +3,11 @@
 Plugin Name: Magic Contact
 Plugin URI: http://blog.hunk.com.mx/magic-contact/
 Description: is a simple and Elegant contact form for Wordpress, taking as it bases to <a href="http://theodin.co.uk/blog/ajax/contactable-jquery-plugin.html">Contactable</a> (jQuery Plugin) By <a href="http://theodin.co.uk/">Philip Beel</a>, After enabling this plugin visit <a href="options-general.php?page=magic-contact.php">the options page</a> to configure settings of sending mail. Please update your settings after upgrading the plugin.
-Version: 0.2
+Version: 0.3
 Author: Hunk, John Bloch
 Author URI: http://hunk.com.mx
 
-Copyright 2010  Edgar G (email : ing.edgar@gmail.com)
+2010  Edgar G (email : ing.edgar@gmail.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -162,21 +162,34 @@ class Magic_Contact {
 		}
 		$name = esc_attr(trim($_POST['name']));
 		$emailAddr = is_email($_POST['email']) ? $_POST['email']: false;
-		$comment = esc_attr(trim($_POST['comment']));
+		$comment = nl2br(esc_attr(trim($_POST['comment'])));
 		$subject = esc_attr(trim($_POST['subject']));	
 		$website = empty($_POST['website']) ? false : esc_url($_POST['website']);
-		$contactMessage = "Message: $comment\r\nFrom: $name";
+			  $contactMessage .= sprintf("<div>From: %s</div>",$name);
 		if($website)
-			$contactMessage .= "\r\nWebsite: $website";
+			$contactMessage .= sprintf("<div>Website: %s</div>",$website);
 		if($emailAddr)
-			$contactMessage .= "\r\nReply to: $emailAddr";
+			$contactMessage .= sprintf("<div>Reply to: %s</div>",$emailAddr);
 		
 		if(!$emailAddr){
 			echo 'An invalid email address was entered';
 			die();
 		}
+		//add referer
+		if(isset($_SERVER["HTTP_REFERER"])){
+		  $contactMessage .= sprintf("<div>On page: %s</div>",$_SERVER["HTTP_REFERER"]);
+	  }
+	  $contactMessage .= sprintf("<div>Message: %s</div>",$comment);
 		
-		$send = wp_mail($this->options['recipient_contact'], $subject, $contactMessage);
+		$contactMessage = sprintf('<div>%s</div>',$contactMessage);
+		
+		$headers = array(
+		  sprintf("From: %s <%s>",$name,$emailAddr),
+    	"Content-Type: text/html"
+    );
+    $h = implode("\r\n",$headers) . "\r\n";
+		
+		$send = wp_mail($this->options['recipient_contact'], $subject, $contactMessage,$h);
 		if($send)
 			echo('success');
 		else
