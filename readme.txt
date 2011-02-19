@@ -10,8 +10,6 @@ Description: Magic Contact is a simple and Elegant contact form for Wordpress, t
 == Description ==
 Magic Contact is a simple and Elegant contact form for Wordpress, taking as it bases to [Contactable](http://theodin.co.uk/blog/ajax/contactable-jquery-plugin.html "Contactable") (jQuery Plugin) By [Philip Beel](http://theodin.co.uk/ "Philip Beel").
 
-<a href="http://blog.hunk.com.mx/magic-contact/">Magic Contact home </a>.
-
 == Installation ==
 Follow the following steps to install this plugin.
 
