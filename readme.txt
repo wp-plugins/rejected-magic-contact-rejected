@@ -1,11 +1,12 @@
 === Magic Contact ===
-Contributors: hunk, John Bloch
+Contributors: hunk
 Tags: contact form, contactable, magic contact, email, contact, form
-Tested up to: Wordpress 3.0.4
+Tested up to: Wordpress 3.2.1
 Requires at least: 2.9.2
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=edgar%40programador%2ecom&lc=GB&item_name=Donation%20Magic%20Contact&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHostedGuest
-Stable tag: 0.3
-Description: Magic Contact is a simple and Elegant contact form for Wordpress, taking as it bases to Contactable (jQuery Plugin) By Philip Beel.
+Stable tag: 0.4
+
+Magic Contact is a simple and Elegant contact form for Wordpress, taking as it bases to Contactable (jQuery Plugin) By Philip Beel.
 
 == Description ==
 Magic Contact is a simple and Elegant contact form for Wordpress, taking as it bases to [Contactable](http://theodin.co.uk/blog/ajax/contactable-jquery-plugin.html "Contactable") (jQuery Plugin) By [Philip Beel](http://theodin.co.uk/ "Philip Beel").
@@ -19,18 +20,23 @@ Follow the following steps to install this plugin.
 4. uses anchor #contact for open the contact form since link
 5. open the contact form with url: domain.local#contact or domain.local/any#contact
 
+== Frequently Asked Questions ==
+[Magic Contact Home](http://blog.hunk.com.mx/magic-contact/)
+
 == Screenshots ==
 1. Magic Contact hidden
 2. Magic Contact form (right)
 3. Magic Contact form (left)
 4. Magic Contact configuration
 
-== Frequently Asked Questions ==
-[Magic Contact Home](http://blog.hunk.com.mx/magic-contact/)
-
 == Changelog ==
 
-== 0.3 ==
+= 0.4 =
+* Add HTML template for email
+* fix overaly in IE
+* remove autedetect wp user
+
+= 0.3 =
 * Add email headers
 * Html format for email message
 * Add overlay
