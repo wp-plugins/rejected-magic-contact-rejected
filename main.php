@@ -3,7 +3,7 @@
 Plugin Name: Magic Contact
 Plugin URI: http://blog.hunk.com.mx/magic-contact/
 Description: is a simple and Elegant contact form for Wordpress, taking as it bases to <a href="http://theodin.co.uk/blog/ajax/contactable-jquery-plugin.html">Contactable</a> (jQuery Plugin) By <a href="http://theodin.co.uk/">Philip Beel</a>, After enabling this plugin visit <a href="options-general.php?page=magic-contact.php">the options page</a> to configure settings of sending mail. Please update your settings after upgrading the plugin.
-Version: 0.4
+Version: 0.4.1
 Author: Hunk
 Author URI: http://hunk.com.mx
 
@@ -44,7 +44,7 @@ class Magic_Contact {
       $this->magic_contact_option_update();
   }
 
-  function magic_contact_option_update(){
+	function magic_contact_option_update(){
     $defaults = array(
       'recipient_contact'       => get_bloginfo('admin_email'),
       'subject_contact'         => 'A contactable message',
@@ -73,7 +73,7 @@ class Magic_Contact {
     update_option('magic_contact_options', $this->options);
     update_option( 'magic_contact_version', 0.2 );
   }
-  
+	
   function AddPluginActions($links) {
     $new_links = array('<a href="options-general.php?page=magic-contact.php">' . __('Settings') . '</a>');
     return array_merge($new_links, $links);
@@ -83,7 +83,7 @@ class Magic_Contact {
   function mc_admin_actions(){
     add_options_page("Magic Contact", "Magic Contact", 'manage_options',"magic-contact.php", array(&$this,"magic_contact_menu"));
   }
-  
+
   function magic_contact_menu(){   
     if ( isset($_POST['submit']) ) {
       if ( !function_exists('current_user_can') || !current_user_can('manage_options') )
@@ -124,7 +124,6 @@ class Magic_Contact {
       'name'            => 'Name',
       'email'           => 'E-Mail',
       'message'         => 'Message',
-      'recipient'       => $this->options['recipient_contact'],
       'subject'         => $this->options['subject_contact'],
       'label_name'      => $this->options['label_name_contact'],
       'label_email'     => $this->options['label_email_contact'],
@@ -144,8 +143,8 @@ class Magic_Contact {
     wp_localize_script( 'my_contactable', 'MagicContact', $js_vars );
     wp_enqueue_style( 'contactable', $base . 'contactable/contactable.css' );
   }
-  
-  
+
+
   function div_magic_contact(){
     echo '<div id="mycontactform"> </div>';
   }
