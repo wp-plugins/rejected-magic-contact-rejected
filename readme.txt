@@ -31,6 +31,10 @@ Follow the following steps to install this plugin.
 
 == Changelog ==
 
+= 0.4.1 =
+* Remove recipient of javascript options
+* fix overlay IE8
+
 = 0.4 =
 * Add HTML template for email
 * fix overaly in IE

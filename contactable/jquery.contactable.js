@@ -12,12 +12,14 @@
 //extend the plugin
 (function($){
 
+
   if (window.location.hash) {
     if(window.location.hash == '#contact'){
       	setTimeout(function(){$("body").prepend('<div class="m-overlay"></div>');$('div#contactable').click();},1000);
       	
     }
   }
+  
   
 	//define the new for the plugin ans how to call it	
 	$.fn.contactable = function(options) { 
@@ -158,5 +160,9 @@
     $('a[href=#contact]').click(function(){
         $('div#contactable').click();
     });
+    $('.m-overlay').live('click',function(){
+      $('div#contactable').click();
+    });
   });
 })(jQuery);
+
