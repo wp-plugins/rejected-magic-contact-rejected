@@ -21,7 +21,7 @@ Follow the following steps to install this plugin.
 5. open the contact form with url: domain.local#contact or domain.local/any#contact
 
 == Frequently Asked Questions ==
-[Magic Contact Home](http://blog.hunk.com.mx/magic-contact/)
+[Magic Contact Home](http://hunk.github.com/Magic-Contact/)
 
 == Screenshots ==
 1. Magic Contact hidden
