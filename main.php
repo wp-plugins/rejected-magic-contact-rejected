@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Magic Contact
-Plugin URI: http://blog.hunk.com.mx/magic-contact/
+Plugin URI: http://hunk.github.com/Magic-Contact/
 Description: is a simple and Elegant contact form for Wordpress, taking as it bases to <a href="http://theodin.co.uk/blog/ajax/contactable-jquery-plugin.html">Contactable</a> (jQuery Plugin) By <a href="http://theodin.co.uk/">Philip Beel</a>, After enabling this plugin visit <a href="options-general.php?page=magic-contact.php">the options page</a> to configure settings of sending mail. Please update your settings after upgrading the plugin.
 Version: 0.4.1
 Author: Hunk
